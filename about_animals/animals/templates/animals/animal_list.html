@@ -1,0 +1,18 @@
+{% extends 'animals/layout.html' %}
+{% load static %}
+
+{% block title %} Главная {% endblock %}
+
+{% block content %}
+    <h1> Список животных </h1>
+    <div class="list">
+        {% if animals %}
+            {% for el in animals %}
+                <a class="detail" href="{% url 'animal_detail' el.id %}">{{ el.kind }}</a> <br>
+                <img class="foto" style="width: 300px; height: 200px" src="{{ el.image.url }}"> <br>
+            {% endfor %}
+        {% else %}
+            <p> Нет животных </p>
+        {% endif %}
+    </div>
+{% endblock %}

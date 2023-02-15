@@ -1,0 +1,15 @@
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.list, name='home'),
+    path('create', views.create, name='create'),
+    path('<int:pk>', views.AnimalDetailView.as_view(), name='animal_detail'),
+]
+
+if settings.DEBUG:
+    urlpatterns += staticfiles_urlpatterns() + static(
+    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

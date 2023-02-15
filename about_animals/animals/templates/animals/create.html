@@ -1,0 +1,20 @@
+{% extends 'animals/layout.html' %}
+
+{% block title %} Добавить животное {% endblock %}
+
+{% block content %}
+    <div class="fields">
+        <h1>Форма для добавления животного</h1>
+        <form class="fields_control" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p> {{ form.kind }}<br></p>
+            <p> {{ form.name }}<br></p>
+            <p> {{ form.image }}<br></p>
+            <p> {{ form.description }}<br></p>
+            <p> {{ form.birthday }}<br></p>
+
+            <span class="fail">{{ error }}</span><br>
+            <button class="send" type="submit">Разместить</button>
+        </form>
+    </div>
+{% endblock %}

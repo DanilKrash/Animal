@@ -1,0 +1,59 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #383838;
+    height: 50px;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    padding: 0 10px;
+    font-size: 18px;
+}
+
+.detail{
+    text-decoration: none;
+    padding: 0 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.list{
+    padding: 30px;
+}
+
+.fields{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.form-control{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.fail{
+    color: red;
+}
+
+.send{
+    border-radius: 5px;
+    border: 2px solid #1d4d1d;
+    padding: 5px 100px;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fields_control{
+    padding: 0 50px;
+}
+
+.foto{
+    padding-bottom: 50px;
+}
