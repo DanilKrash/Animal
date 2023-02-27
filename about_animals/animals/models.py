@@ -16,4 +16,16 @@ class Animal(models.Model):
         verbose_name_plural = 'Животные'
 
 
+class Comment(models.Model):
+    author = models.CharField(max_length=64, verbose_name='автор')
+    text = models.TextField(blank=False, verbose_name='текст')
+    date = models.DateTimeField(auto_now_add=True, verbose_name='дата')
+    img = models.ForeignKey(Animal, on_delete=models.CASCADE, verbose_name='картинка', related_name='comments')
 
+    def __str__(self):
+        return self.text[:32]
+
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
+        ordering = ['-date', ]

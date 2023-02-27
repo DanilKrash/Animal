@@ -4,10 +4,27 @@
 
 {% block content %}
     <h1> Информация о животном </h1>
-    <h2> Порода: {{ animal.kind }} </h2>
-    <h3> Имя: {{ animal.name }} </h3>
-    <h4> Описание: <br> {{ animal.description }} </h4>
-    <img style="width: 300px; height: 200px" src="{{ animal.image }}" alt="">
-    <h3> Родился: {{ animal.birthday }} </h3>
+    <h2> Порода: {{ animal_detail.kind }} </h2>
+    <h3> Имя: {{ animal_detail.name }} </h3>
+    <h4> Описание: <br> {{ animal_detail.description }} </h4>
+    <img style="width: 300px; height: 200px" src="{{ animal_detail.image }}" alt="">
+    <h3> Родился: {{ animal_detail.birthday }} </h3>
+
+    <div>
+        {% for comment in comments %}
+            <div style="border: 1px solid black;">
+                <h3>{{ comment.author }}</h3>
+                <p>{{ comment.text }}</p>
+                <p>{{ comment.date }}</p>
+            </div>
+        {% endfor %}
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ form.author }}</p>
+            <p>{{ form.text }}</p>
+            <button class="send" type="submit"> Оставить </button>
+        </form>
+    </div>
 {% endblock %}
 

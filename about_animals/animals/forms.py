@@ -1,4 +1,4 @@
-from .models import Animal
+from .models import Animal, Comment
 from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
 
 
@@ -25,4 +25,19 @@ class AnimalsForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'День рождения животного'
             }),
+        }
+
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('author', 'text')
+
+        widgets = {
+            'author': TextInput(attrs={
+                'placeholder': 'Введите ваше имя'
+            }),
+            'text': Textarea(attrs={
+                'placeholder': 'Введите текст'
+            })
         }
