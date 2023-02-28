@@ -1,3 +1,18 @@
+body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.Content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #eaeaea;
+    width: 90%;
+}
+
 .header{
     display: flex;
     justify-content: center;
@@ -16,12 +31,15 @@
 .detail{
     text-decoration: none;
     padding: 0 10px;
-    font-size: 18px;
-    color: black;
+    font-size: 19px;
+    color: white;
 }
 
 .list{
-    padding: 30px;
+    padding: 0 250px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .fields{
@@ -32,7 +50,7 @@
 }
 
 .form-control{
-    border: 2px solid black;
+    border: none;
     padding: 5px;
     border-radius: 5px;
 }
@@ -55,5 +73,48 @@
 }
 
 .foto{
-    padding-bottom: 50px;
+    padding-bottom: 20px;
+}
+
+.block_animal{
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px 100px;
+}
+
+.active_content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info_detail{
+    display: flex;
+    padding: 0 50px;
+    flex-direction: row;
+}
+
+.main_info{
+    display: flex;
+    padding-right: 50px;
+    flex-direction: column;
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+}
+
+.more_comments{
+    margin: 50px 20px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+footer {
+    display: flex;
+    background: #383838;
+    color: white;
+    justify-content: center;
 }

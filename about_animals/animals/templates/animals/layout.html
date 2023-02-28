@@ -1,20 +1,26 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'animals/css/styles.css' %}">
 </head>
-<body>
-    <div class="header">
-        <a class="link" href="{% url 'home' %}">Главная</a>
-        <a class="link" href="{% url 'create' %}">Добавить животного</a>
+<html lang="ru">
+
+<body bgcolor="#000" background="{% static 'animals/img/FON.jpg' %}">
+    <div class="Content">
+        <div class="header">
+            <a class="link" href="{% url 'home' %}">Главная</a>
+            <a class="link" href="{% url 'create' %}">Добавить животного</a>
+        </div>
+
+        {% block content %}
+
+        {% endblock %}
+    <footer>
+        <p>Copyright © 2023 AnimalView.</p>
+    </footer>
     </div>
-
-    {% block content %}
-
-    {% endblock %}
 
 </body>
 </html>

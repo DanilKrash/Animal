@@ -35,9 +35,11 @@ class CommentForm(ModelForm):
 
         widgets = {
             'author': TextInput(attrs={
+                'class': 'form-control',
                 'placeholder': 'Введите ваше имя'
             }),
             'text': Textarea(attrs={
+                'class': 'form-control',
                 'placeholder': 'Введите текст'
-            })
+            }),
         }
